@@ -1,0 +1,322 @@
+
+
+/*ナビゲーションリンクをクリックするとスクロールする*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* .wrap {
+    overflow: hidden;
+} */
+
+/* ヘッダー */
+.top-img {
+    background-image: url("../img/blackwhite.jpg");
+    background-size: cover;
+    /* width: 100%; */
+    min-width: 100%;
+    height: 580px; 
+    background-attachment: fixed;
+}
+
+#colorw {
+    color: white;
+}
+
+.top-img h1 {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: center;
+    width: 100%;
+    /*font-family: Quicksand, sans-serif;*/
+     /*font-family: "游ゴシック", "Yu Gothic";*/
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.top-img p {
+    position: absolute;
+    color: black;
+     /*font-weight: bold; */
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    /*font-family: Quicksand, sans-serif;*/
+    /*font-family: "游ゴシック", "Yu Gothic";*/
+    top: 65%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.gnav {
+    background-color: white;
+    opacity: 0.8;
+    
+}
+
+.nav-item a {
+    color: black;
+    /* padding-right: 30px; */
+    /* justify-content: ; */
+    font-size: 25px;
+    
+}
+
+
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%
+}
+
+#profile, #skills, #contact {
+    font-family: "游ゴシック", "Yu Gothic";
+} 
+
+/*アイコンの色*/
+.i-skyblue {
+    color: #55acee;
+}
+
+.title {
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+#profile {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: block;
+     /*font-family: "游ゴシック", "Yu Gothic";*/
+}
+
+.name {
+    font-size: 1.5em;
+}
+
+.test-png {
+    /*max-width: 350px; */
+     min-width: 350px;  
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.text-field {
+    line-height: 40px;
+}
+
+#skills {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.fab {
+    margin: 10px;
+}
+
+#portforio {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-family: "游ゴシック", "Yu Gothic";
+}
+
+.row img { 
+    max-width: 200px;
+ }
+
+.hover {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    color: #fff;
+    display: inline-block;
+    padding: 6px 2px;
+    margin: 0 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.hover:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    transform: translateY(-0.1875em);
+}
+
+#contact {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #EEEEEE;
+
+}
+
+.form-group {
+    padding: 10px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 30px 0; 
+    text-align: center;
+}
+
+/* ------------------------ここからスマホサイズのCSS------------------------------- */
+@media screen and (max-width: 480px) {
+
+  
+    .wrap {
+        overflow: hidden;
+    }
+
+    .top-img h1 {
+        font-size: 40px;
+    }
+
+    .top-img p {
+        font-size: 20px;
+    }
+
+    .test-png {
+        max-width: 285px; 
+        /* min-width: 350px;  */
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    #portforio img {
+        width: 250px;
+    }
+
+    /* ハンバーガーメニュー */
+  #nav-drawer {
+    position: relative;
+    padding: 20px;
+    position: fixed;
+    z-index: 10;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 330px;/*最大幅（調整してください）*/
+    height: 100%;
+    background: #fff;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+  .gnav {
+      display: none;
+  }
+  /* ここまでハンバーガメニュー */
+
+
+.top-img {
+    height: 350px;
+}
+
+  /* profileのCSS記述 */
+#profile {
+    margin: 50px auto;
+}
+
+/* portfolioのCSS記述 */
+#portforio {
+    margin: 100px 0;
+}
+
+.row img {
+    margin: 20px;
+    width: 100vw;
+}
+
+
+}
+/* ------------------------ここまでスマホサイズのCSS記述-------------------------- */
+
+
+/* ------------------------ここから480px以上のデバイス表示------------------------- */
+@media screen and (min-width: 480px) {
+
+    #nav-drawer {
+        display: none;
+    }
+}
